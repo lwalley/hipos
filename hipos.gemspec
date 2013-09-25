@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name        = 'hipo'
+  s.name        = 'hipos'
   s.summary     = 'Compass plugin for HPS Drupal distribution'
   s.version     = '0.0.0'
   s.date        = '2013-09-25'
@@ -10,5 +10,15 @@ Gem::Specification.new do |s|
     hipos.gemspec
     lib/hipos.rb
     stylesheets/_hipos.scss
+    stylesheets/hipos/_base.scss
+    stylesheets/hipos/_layout.scss
+    stylesheets/hipos/_mixins.scss
+    stylesheets/hipos/_mixins-zen.scss
+    stylesheets/hipos/_modules.scss
+    stylesheets/hipos/_print.scss
+    templates/project/manifest.rb
+    templates/project/init-hipos.scss
+    templates/project/init.scss
+    templates/project/styles.scss
   ]
 end

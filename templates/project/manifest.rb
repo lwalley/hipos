@@ -1,2 +1,5 @@
-# Make sure you list all the project template files here in the manifest.
-stylesheet 'screen.sass', :media => 'screen, projection'
+description 'Hipos default styles for Drupla HPS distribution'
+
+stylesheet '_init.scss',       :media => 'all'
+stylesheet '_init-hipos.scss', :media => 'all'
+stylesheet 'styles.scss',      :media => 'all'

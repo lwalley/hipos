@@ -1,2 +1,3 @@
-base_directory  = File.join(File.dirname(__FILE__), '..', 'compass')
-Compass::Frameworks.register('hipos', :path => base_directory)
+require 'compass'
+extension_path = File.expand_path(File.join(File.dirname(__FILE__), ".."))
+Compass::Frameworks.register('hipos', :path => extension_path)
