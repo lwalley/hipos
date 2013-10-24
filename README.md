@@ -1,4 +1,4 @@
-# ABOUT hipos
+# About hipos
 
 Hipos includes styles for theming the Drupal History and Philosphy of Science
 (HPS) distribution.
@@ -9,6 +9,6 @@ adapted from the Zen starter kit.
 
 Hipos is structured using
 [Scalable and Modular Architecture for CSS (SMACSS)](http://smacss.com) and
-follows [Block-Element-Modifier (BEM) methodology](http://bem.info).
+follows [Block-Element-Modifier (BEM)](http://bem.info) methodology.
 
 

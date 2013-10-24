@@ -1,0 +1,39 @@
+// @file
+// Styles for individual modular elements in micro layout.
+
+.header__name-and-slogan {
+  margin: 0;
+}
+.header__site-name {
+  @include hipos-adjust-font-size-and-rhythm(1.1);
+  margin: 0;
+}
+
+.navigation {
+  .block {
+    margin: 0
+  }
+  h2 {
+    padding-left: $zen-gutter-width / 2;
+    margin: 0;
+    a {
+      margin: 0;
+    }
+  }
+}
+
+// Navigation: switch to horizontal nav for wider screens.
+// Breakpoint should match Drupal.behaviours.hpszen.navigationBreakpoint
+@media all and (min-width: 1em / 16 * 841) {
+  @include hipos-horizontal-navigation;
+}
+
+.region-footer {
+  .menu {
+    a {
+      display: inline-block;
+      padding: rhythm(0.5);
+    }
+  }
+}
+

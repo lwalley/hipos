@@ -1,7 +1,5 @@
 // @file
-// Default modular sets of styles following SMACCS and BEM conventions.
-// @see http://smacss.com
-// @see http://bem.info
+// Basic styles for modular elements.
 
 @if hipos-import-once("basic/_modules.scss") {
 
@@ -1000,35 +998,7 @@
       margin-right: rhythm(2);
     }
   }
-  // Navigation: switch to horizontal nav for wider screens.
-  // Must match the js threshold for horizontal menu
-  // @see js/script.js
-  @media all and (min-width: 1em / 16 * 699) {
-    // Convert main menu to horizontal bar.
-    .navigation {
-      .block {
-        margin: 0;
-        > ul {
-          float: left;
-          > li {
-            float: left;
-            list-style-position: inside;
-            margin-right: rhythm(1);
-            &:last-child {
-              margin-right: 0;
-            }
-            > a {
-              @include padding-leader(0.5);
-              @include padding-trailer(0.5);
-            }
-          }
-        }
-      }
-      h2 {
-        @include element-invisible;
-      }
-    }
-  }
+
   // Results lists
   #results {
     .pane-views-exposed {

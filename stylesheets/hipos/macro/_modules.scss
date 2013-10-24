@@ -1,0 +1,8 @@
+// @file
+// Styles for individual modular elements in macro layout.
+
+// Navigation: switch to horizontal nav for wider screens.
+// Breakpoint should match Drupal.behaviours.hpszen.navigationBreakpoint
+@media all and (min-width: 1em / 16 * 699) {
+  @include hipos-horizontal-navigation;
+}

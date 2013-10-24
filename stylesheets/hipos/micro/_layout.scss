@@ -1,85 +1,22 @@
-/**
- * @file
- * Layout styles for a minimal header and footer.
- */
-// @todo move component styles to separate file.
+// @file
+// Styles for positioning modular elements on a page in a micro layout.
 
 .header {
   float: right;
   padding-right: $zen-gutter-width / 2;
 }
-@media all and (min-width: 1em / 16 * 699) {
-}
-.header__name-and-slogan {
-  margin: 0;
-}
-.header__site-name {
-  @include hipos-adjust-font-size-and-rhythm(1.1);
-  margin: 0;
-}
 
-.navigation {
-  .block {
-    margin: 0
-  }
-  h2 {
-    padding-left: $zen-gutter-width / 2;
-    margin: 0;
-    a {
-      margin: 0;
-    }
-  }
-}
-@media all and (min-width: 1em / 16 * 699) {
-  // Undo horizontal bar.
-  // @todo sort out basic modular styles better so that we don't have to
-  //       override here
-  .navigation {
-    .block {
-      > ul {
-        float: none;
-        > li {
-          float: none;
-          margin: 0;
-          > a {
-            @include padding-leader();
-            @include padding-trailer();
-          }
-        }
-      }
-    }
-    h2 {
-      @include element-invisible-off;
-    }
-  }
-}
+// Switch to horizontal navigation and reposition header.
+// Breakpoint should match Drupal.settings.hpszen.navigationBreakpoint
 @media all and (min-width: 1em / 16 * 841) {
   .header {
     @include zen-grid-item-base();
     @include zen-grid-item(5, 1);
     @include padding-leader(0.45);
   }
-  // Convert main menu to horizontal bar.
   .navigation {
     @include zen-grid-item-base();
     @include zen-grid-item(7, 6);
-    .block {
-      > ul {
-        float: left;
-        > li {
-          float: left;
-          &:last-child {
-            margin-right: 0;
-          }
-          > a {
-            padding: rhythm(0.5) rhythm(0.7);
-          }
-        }
-      }
-    }
-    h2 {
-      @include element-invisible;
-    }
   }
 }
 .main__content {
@@ -93,10 +30,6 @@
   }
   .menu {
     @include adjust-leading-to(1);
-    a {
-      display: inline-block;
-      padding: rhythm(0.5);
-    }
   }
 }
 @media all and (min-width: 1em / 16 * 510) {

@@ -33,13 +33,20 @@
   @include text-shadow(rgba(white, $opacity) 0 1px 0);
 }
 
-@mixin hipos-vertical-rule($side, $opacity: 0.2, $opacity2: 0.5) {
-  @include apply-side-rhythm-border($side, 1px, 0);
-  border-#{$side}-color: rgba(white, $opacity);
-  @if $side == left {
-    @include single-box-shadow(rgba(black, $opacity2), -1px, 0, 0);
-  } @else {
-    @include single-box-shadow(rgba(black, $opacity2), 1px, 0, 0);
+@mixin hipos-two-tone-border($side: bottom, $border-color: black, $shadow-color: white, $opacity: 0.1) {
+  @include apply-side-rhythm-border($side);
+  border-#{$side}-color: $border-color;
+  @if $side == bottom {
+    @include single-box-shadow(rgba($shadow-color, $opacity), 0, 1px, 0, 0);
+  }
+  @else if $side == top {
+    @include single-box-shadow(rgba($shadow-color, $opacity), 0, 1px, 0, 0, inset);
+  }
+  @else if $side == left {
+    @include single-box-shadow(rgba($shadow-color, $opacity), -1px, 0, 0, 0);
+  }
+  @else if $side == right {
+    @include single-box-shadow(rgba($shadow-color, $opacity), 1px, 0, 0, 0);
   }
 }
 
@@ -145,3 +152,36 @@
   }
 }
 
+@mixin hipos-menu-list($gap-rhythm: 0.3) {
+  @include hipos-bulletless-list;
+  a {
+    display: inline-block;
+    padding: rhythm($gap-rhythm) 0;
+    text-decoration: none;
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin hipos-horizontal-navigation() {
+  .navigation {
+    .block {
+      margin: 0;
+      > ul {
+        float: left;
+        > li {
+          float: left;
+          > a {
+            padding: rhythm(0.5) rhythm(0.7);
+          }
+        }
+      }
+    }
+    h2 {
+      @include element-invisible;
+    }
+  }
+}
