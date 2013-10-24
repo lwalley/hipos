@@ -1,0 +1,78 @@
+/**
+ * @file
+ * Swimlanes theme
+ *
+ * Stretches background colors across full screen width for each page section.
+ * Page sections are define in the page.tpl.php of the HPS Zen theme.
+ * @see hpszen/templates/page.tpl.php
+ */
+@import '../mixins';
+
+body {
+  @include hipos-color($body--colors);
+}
+
+#header {
+  @include hipos-color($header--colors);
+}
+
+.navigation {
+  // @note #main-menu is turned off so we can have expanded menu items using #block-system-main-menu.
+  @include hipos-color($navigation--colors);
+  font-family: $hipos-font-menus;
+  a.active-trail {
+    @include hipos-color($navigation--active--colors);
+  }
+}
+
+html.js .navigation {
+  // If Javascript is enabled then replace navigation header with hamburger icon
+  h2 {
+    @include hide-text();
+    a {
+      background: sprite($icons-small, hamburger) no-repeat;
+    }
+  }
+  // @todo This doesn't work properly at the moment because we need to add state
+  //       to the toggle if we want to show a different icon depending on
+  //       whether navigation is dropped down or not (not the same as
+  //       expanded/collapsed).
+  //       Also missing background color for active trail.
+  .subnavigation__toggle {
+    @include hide-text();
+    display: inline-block;
+    padding: 0;
+    margin: rhythm(1);
+    //height: image-height(sprite-file($icons-small, arrow-down-on));
+    //width: image-width(sprite-file($icons-small, arrow-down-on));
+    //background: sprite($icons-small, arrow-down-on) no-repeat;
+  }
+}
+
+.main__header {
+  @include hipos-color($main__header--colors);
+  // @todo sort out colors of tabs, see modules-basic
+}
+#introduction {
+  @include hipos-color($introduction--colors);
+}
+#featured {
+  @include hipos-color($featured--colors);
+}
+#results {
+  #results_one {
+    .pane-views-exposed {
+      @include hipos-color(nth($hipos-colors, 8));
+    }
+  }
+}
+#after {
+  @include hipos-color($after--colors);
+}
+#bottom {
+  @include hipos-color($bottom--colors);
+}
+#footer {
+  @include hipos-color($footer--colors);
+}
+

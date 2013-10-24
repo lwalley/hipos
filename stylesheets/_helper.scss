@@ -1,0 +1,10 @@
+$hipos-imported-files: () !default;
+
+@function hipos-import-once($name) {
+  @if index($hipos-imported-files, $name) {
+    @return false;
+  }
+  $hipos-imported-files: append($hipos-imported-files, $name);
+  @return true;
+}
+

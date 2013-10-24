@@ -1,0 +1,118 @@
+// @file
+// Base layout, shared across themes.
+// Divides the page into sections, and positions modular items on the page, but
+// does not contain layout attributes for elements within a modular item.
+
+@if hipos-import-once("basic/_layout.scss") {
+
+  // @note Uses the Zen Grids plugin for Compass: http://zengrids.com.
+  //       Mobile first approach so by default we have styles specific to
+  //       mobile phones, basically anything with a max-width < 480px.
+  // @note zen-nested-container() must come after zen-grid-item().
+
+  // Increase default base font size as screen gets wider.
+  @include hipos-increase-base-font-sizes(1.2); // 1em == 12px
+  @media all and (min-width: 1em / 16 * 481) and (max-width: 1em / 16 * 1023) {
+    @include hipos-increase-base-font-sizes(1.3); // 1em == 13px
+  }
+  @media all and (min-width: 1em / 16 * 1024) {
+    @include hipos-increase-base-font-sizes(1.4);
+  }
+
+  html,
+  body {
+    // Required to keep footer at the bottom of the page.
+    height: 100%;
+  }
+
+  .page {
+    // Required to keep footer at the bottom of the page.
+    min-height: 100%;
+    position: relative;
+  }
+
+  %bucket {
+    @include zen-grid-container();
+    margin: 0 auto;
+  }
+  @media all and (min-width: 1em / 16 * 961) {
+    %bucket {
+      max-width:  hipos-px-to-em($hipos-max-content-width, 13);
+    }
+  }
+  @media all and (min-width: 1em / 16 * 1024) {
+    %bucket {
+      max-width:  hipos-px-to-em($hipos-max-content-width, 14);
+    }
+  }
+  .bucket {
+    @extend %bucket;
+  }
+
+  %panel,
+  .panel {
+    @include zen-grid-item-base();
+    @include zen-grid-item($zen-column-count, 1);
+    @include zen-clear();
+  }
+
+  @media all and (min-width: 1em / 16 * 961) {
+    .header__bucket {
+      // Limit header width but make it slightly larger than content.
+      max-width: hipos-px-to-em($hipos-max-content-width + 30, 13);
+    }
+  }
+  @media all and (min-width: 1em / 16 * 1024) {
+    .header__bucket {
+      max-width: hipos-px-to-em($hipos-max-content-width + 60, 14);
+    }
+  }
+
+  @media all and (min-width: 1em / 16 * 961) {
+    // Line up navigation link with content.
+    .navigation__bucket {
+      max-width: hipos-px-to-em($hipos-max-content-width - 15, 13);
+    }
+  }
+  @media all and (min-width: 1em / 16 * 1024) {
+    .navigation__bucket {
+      max-width: hipos-px-to-em($hipos-max-content-width - 15, 14);
+    }
+  }
+
+  // Main container
+  .main__header__panel--ish {
+    @extend %panel;
+  }
+  .main__content {
+    padding-bottom: rhythm($hipos-footer-rhythm + 1); // Provide space for footer plus extra.
+  }
+  .no-panels .main__content__bucket--ish {
+    @extend %bucket;
+  }
+  .no-panels .main__content__panel--ish {
+    @extend %panel;
+  }
+
+  // Bottom region
+  .region-bottom {
+    @include padding-leader();
+    padding-bottom: rhythm($hipos-footer-rhythm + 1); // Provide space for footer
+    .block {
+      @extend %panel;
+    }
+  }
+
+  // Footer region
+  .region-footer {
+    // Keep footer at the bottom of the page.
+    position: absolute;
+    bottom: 0;
+    height: rhythm($hipos-footer-rhythm);
+    width: 100%;
+    .block {
+      @extend %panel;
+    }
+  }
+
+}

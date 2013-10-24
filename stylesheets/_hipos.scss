@@ -1,8 +1,4 @@
-// Import hipos partials
+// Initialize hipos plugin.
 
-@import "hipos/mixins";
-@import "hipos/mixins-zen";
-@import "hipos/base";
-@import "hipos/layout";
-@import "hipos/modules";
-@import "hipos/print";
+@import "helper";
+@import "hipos/init";

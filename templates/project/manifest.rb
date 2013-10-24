@@ -1,5 +1,9 @@
-description 'Hipos default styles for Drupla HPS distribution'
+description %{ Styles for Drupal HPS distribution; styles are structured with
+               SMACSS and BEM. }
 
-stylesheet '_init.scss',       :media => 'all'
-stylesheet '_init-hipos.scss', :media => 'all'
-stylesheet 'styles.scss',      :media => 'all'
+stylesheet 'sass/_init.scss',   :media => 'all'
+stylesheet 'sass/basic.scss',   :media => 'all'
+stylesheet 'sass/layout.scss',  :media => 'all'
+stylesheet 'sass/modules.scss', :media => 'all'
+stylesheet 'sass/theme.scss',   :media => 'all'
+stylesheet 'sass/print.scss',   :media => 'all'

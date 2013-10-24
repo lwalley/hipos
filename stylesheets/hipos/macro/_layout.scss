@@ -1,0 +1,132 @@
+/**
+ * @file
+ * Overrides base layout for all page elements.
+ */
+
+.header__bucket {
+  position: relative; // Keep secondary menu contained
+  @include padding-leader(3); // Need space for secondary menu to slot into.
+}
+.header__brand,
+.header__secondary-menu,
+.header__region {
+  @include zen-grid-item-base();
+  @include zen-grid-item($zen-column-count, 1);
+  @include zen-clear();
+}
+
+.header__secondary-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media all and (min-width: 1em / 16 * 768) {
+  .header__bucket {
+    @include padding-leader();
+    @include padding-trailer();
+  }
+  .header__brand {
+    @include zen-grid-item(7, 1);
+  }
+  .header__region,
+  .header__secondary-menu {
+    @include zen-grid-item(5, 8);
+  }
+  .header__region {
+    margin-top: rhythm(2);
+    clear: none;
+  }
+}
+.navigation__block {
+  @include zen-grid-item-base();
+  @include zen-grid-item($zen-column-count, 1);
+  @include zen-clear();
+  @include zen-nested-container();
+  margin-bottom: 0;
+}
+
+// Default multi-column layouts for panels, overrides .panel
+@media all and (min-width: 1em / 16 * 768) {
+  .hpszen-i1-f1-b2,
+  .hpszen-i1-f2-b2 {
+    #basic__one {
+      @include zen-grid-item(6, 1);
+    }
+    #basic__two {
+      @include zen-grid-item(6, 7);
+      clear: none;
+    }
+  }
+  .hpszen-i1-f1-b3,
+  .hpszen-i1-f2-b3,
+  .hpszen-i1-f3-b3-a1 {
+    #basic__one {
+      @include zen-grid-item(4, 1);
+    }
+    #basic__two {
+      @include zen-grid-item(4, 5);
+      clear: none;
+    }
+    #basic__three {
+      @include zen-grid-item(4, 9);
+      clear: none;
+    }
+  }
+  .hpszen-i1-f2-b2,
+  .hpszen-i1-f2-b3 {
+    #featured__one {
+      @include zen-grid-item(8, 1);
+    }
+    #featured__two {
+      @include zen-grid-item(4, 9);
+      clear: none;
+    }
+  }
+  .hpszen-i1-f3-b3-a1 {
+    #featured__one {
+      @include zen-grid-item(4, 1);
+    }
+    #featured__two {
+      @include zen-grid-item(4, 5);
+      clear: none;
+    }
+    #featured__three {
+      @include zen-grid-item(4, 9);
+      clear: none;
+    }
+  }
+  .hpszen-b2,
+  .hpszen-i1-b2 {
+    #basic__one {
+      @include zen-grid-item(3, 1);
+    }
+    #basic__two {
+      @include zen-grid-item(9, 4);
+      clear: none;
+    }
+  }
+  .hpszen-i1-b3 {
+    #basic__one {
+      @include zen-grid-item(3, 1);
+    }
+    #basic__two {
+      @include zen-grid-item(6, 4);
+      clear: none;
+    }
+    #basic__three {
+      @include zen-grid-item(3, 10);
+      clear: none;
+    }
+  }
+  .hpszen-i1-r2 {
+    #results__one {
+      @include zen-grid-item(4, 1);
+    }
+    #results__two {
+      @include zen-grid-item(8, 5);
+      clear: none;
+    }
+  }
+}
+
