@@ -166,22 +166,20 @@
   }
 }
 
+// Used with main menu block
 @mixin hipos-horizontal-navigation() {
-  .navigation {
-    .block {
-      margin: 0;
-      > ul {
+  .block {
+    > ul {
+      float: left;
+      > li {
         float: left;
-        > li {
-          float: left;
-          > a {
-            padding: rhythm(0.5) rhythm(0.7);
-          }
+        > a {
+          padding: rhythm(0.5) rhythm(0.7);
         }
       }
     }
-    h2 {
-      @include element-invisible;
-    }
+  }
+  h2 {
+    @include element-invisible;
   }
 }

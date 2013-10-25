@@ -94,7 +94,6 @@
     @extend %panel;
   }
 
-  // Bottom region
   .region-bottom {
     @include padding-leader();
     padding-bottom: rhythm($hipos-footer-rhythm + 1); // Provide space for footer
@@ -103,7 +102,6 @@
     }
   }
 
-  // Footer region
   .region-footer {
     // Keep footer at the bottom of the page.
     position: absolute;

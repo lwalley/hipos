@@ -44,6 +44,10 @@
   margin-bottom: 0;
 }
 
+.results__bucket {
+  @include margin-leader();
+}
+
 // Default multi-column layouts for panels, overrides .panel
 @media all and (min-width: 1em / 16 * 768) {
   .hpszen-i1-f1-b2,

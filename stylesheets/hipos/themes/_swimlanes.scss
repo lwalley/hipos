@@ -12,7 +12,7 @@ body {
   @include hipos-color($body--colors);
 }
 
-#header {
+.header {
   @include hipos-color($header--colors);
 }
 
@@ -53,26 +53,24 @@ html.js .navigation {
   @include hipos-color($main__header--colors);
   // @todo sort out colors of tabs, see modules-basic
 }
-#introduction {
+.introduction {
   @include hipos-color($introduction--colors);
 }
-#featured {
+.featured {
   @include hipos-color($featured--colors);
 }
-#results {
-  #results_one {
-    .pane-views-exposed {
-      @include hipos-color(nth($hipos-colors, 8));
-    }
+.panel__results {
+  .pane-views-exposed {
+    @include hipos-color(nth($hipos-colors, 8));
   }
 }
-#after {
+.after {
   @include hipos-color($after--colors);
 }
-#bottom {
+.bottom {
   @include hipos-color($bottom--colors);
 }
-#footer {
+.footer {
   @include hipos-color($footer--colors);
 }
 

@@ -409,17 +409,8 @@
     padding: 1px 0 1px 20px; /* LTR */
   }
 
-  /**
-   * Pager.
-   */
-  .item-list {
-    // Override Drupal defaults
-    // @see _base.scss
-    .pager {
-      @include padding-leader(3);
-    }
-  }
-  /* A list of page numbers when more than 1 page of content is available. */
+  // Pager.
+  // A list of page numbers when more than 1 page of content is available.
   .pager {
     clear: both;
     @include padding-leader(3);
@@ -1000,28 +991,31 @@
   }
 
   // Results lists
-  #results {
+  .panel__results {
     .pane-views-exposed {
       padding: rhythm(1);
-      .views-submit-button {
-        clear: both;
-        float: right;
-        input {
-          margin-top: 0;
-        }
+    }
+    .views-widget-filter-search_api_views_fulltext {
+      label {
+        @include hide-text();
+      }
+    }
+    .views-submit-button {
+      clear: both;
+      float: right;
+      input {
+        margin-top: 0;
       }
     }
   }
-  #results__two {
+  .panel__results {
     .pane-views-row {
-      .pane-content {
-        > div {
-          @include padding-leader(0.5);
-          @include padding-trailer(0.5);
-          border-bottom: 1px dotted darken(white, 30%);
-          &:first-child {
-            border-top: 1px dotted darken(white, 30%);
-          }
+      > div {
+        @include padding-leader(0.5);
+        @include padding-trailer(0.5);
+        border-bottom: 1px dotted darken(white, 30%);
+        &:first-child {
+          border-top: 1px dotted darken(white, 30%);
         }
       }
     }
