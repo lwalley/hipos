@@ -5,16 +5,20 @@
 // Breakpoint should match Drupal.behaviours.hpszen.navigationBreakpoint
 @media all and (min-width: 1em / 16 * 699) {
   .navigation {
-    @include hipos-horizontal-navigation;
     .block {
       > ul {
+        float: left;
         > li {
+          float: left;
           margin-right: rhythm(1);
           > a {
             padding: rhythm(0.5) rhythm(1);
           }
         }
       }
+    }
+    h2 {
+      @include element-invisible;
     }
   }
 }

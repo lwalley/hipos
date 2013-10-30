@@ -18,6 +18,9 @@
   @media all and (min-width: 1em / 16 * 1024) {
     @include hipos-increase-base-font-sizes(1.4);
   }
+  @media all and (min-width: 1em / 16 * 1920) {
+    @include hipos-increase-base-font-sizes(1.5);
+  }
 
   html,
   body {
@@ -94,7 +97,7 @@
     @extend %panel;
   }
 
-  .region-bottom {
+  .bottom {
     @include padding-leader();
     padding-bottom: rhythm($hipos-footer-rhythm + 1); // Provide space for footer
     .block {
@@ -102,7 +105,7 @@
     }
   }
 
-  .region-footer {
+  .footer {
     // Keep footer at the bottom of the page.
     position: absolute;
     bottom: 0;

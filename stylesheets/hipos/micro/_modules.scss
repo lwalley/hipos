@@ -25,7 +25,22 @@
 // Navigation: switch to horizontal nav for wider screens.
 // Breakpoint should match Drupal.behaviours.hpszen.navigationBreakpoint
 @media all and (min-width: 1em / 16 * 841) {
-  @include hipos-horizontal-navigation;
+  .navigation {
+    .block {
+      > ul {
+        float: right;
+        > li {
+          float: left;
+          > a {
+            padding: rhythm(0.5) rhythm(0.7);
+          }
+        }
+      }
+    }
+    h2 {
+      @include element-invisible;
+    }
+  }
 }
 
 .region-footer {
