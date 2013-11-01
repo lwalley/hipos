@@ -46,25 +46,23 @@ $h4-font-size: 1   * $base-font-size;
 $h5-font-size: 1   * $base-font-size;
 $h6-font-size: 1   * $base-font-size;
 
-// The following font family declarations are based on the Microsoft core web
-// fonts which are common fonts available on most computer systems. The DejaVu
-// and Nimbus Sans fonts are commonly available on Linux systems where the MS
-// fonts are less common. Tahoma and Helvetica are also widely available.
+// @see https://mondaybynoon.com/linux-font-equivalents-to-popular-web-typefaces
+// @see http://support.apple.com/kb/ht5484
 $times-new-roman: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
 $times:           Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
-$georgia:         Georgia, "Times New Roman", "DejaVu Serif", serif;
-$lucida-grande:   "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
-$garamond:        Garamond, Perpetua, "Times New Roman", serif;
+$georgia:         Georgia, "Times New Roman", "Norasi", "DejaVu Serif", serif;
+$lucida-grande:   "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Garuda", "Malayalam Sangam MN", Tahoma, Arial, sans-serif;
+$garamond:        Garamond, Perpetua, "Times New Roman", "DejaVu Serif", serif;
 
-$verdana:         Verdana, Tahoma, "DejaVu Sans", sans-serif;
-$tahoma:          Tahoma, Verdana, "DejaVu Sans", sans-serif;
+$verdana:         Verdana, Tahoma, "Kalimati", "DejaVu Sans", sans-serif;
+$tahoma:          Tahoma, Verdana, "Kalimati", "DejaVu Sans", sans-serif;
 $helvetica:       Helvetica, Arial, "Nimbus Sans L", sans-serif;
 $arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
 $neue:            "Helvetica Neue", Arial, Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
 
 // For an explanation of why "sans-serif" is at the end of this list, see
 // http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
-$courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+$courier:         "Courier New", "DejaVu Sans Mono", "Nimbus Mono L", monospace, sans-serif;
 
 //
 // Colors, shadows etc.
