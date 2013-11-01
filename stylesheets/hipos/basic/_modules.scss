@@ -18,6 +18,7 @@
     &.hps-minor,
     &.hps-uniform {
       display: inline-block;
+      max-width: 100%;
       img {
         max-width: 100%;
       }
@@ -117,6 +118,9 @@
     font-family: $hipos-font-headings;
   }
   @media all and (min-width: 1em / 16 * 768) {
+    .header__logo {
+      @include leader(1);
+    }
     .header__site-name {
       @include adjust-leading-to(0.8);
     }
@@ -128,9 +132,6 @@
     .header__logo,
     .header__name-and-slogan {
       margin-left: hipos-px-to-em(25, 14);
-    }
-    .header__logo {
-      @include leader(1);
     }
     .header__site-name {
       @include adjust-leading-to(0.8);
@@ -551,8 +552,7 @@
 
     /* The descriptive help text (separate from the label). */
     .description {
-      @include hipos-adjust-font-size-and-rhythm(0.9);
-      @include margin-leader(0.3);
+      @include hipos-adjust-font-size-and-rhythm(0.9, 0.3);
     }
   }
 
@@ -803,7 +803,7 @@
       float: right;
     }
     input[type="text"] {
-      width: rhythm(6);
+      width: rhythm(5);
     }
     input[type="submit"] {
       margin: 0;
@@ -943,8 +943,6 @@
   // Overrides for modular elements within specific sections.
 
   // Navigation bar.
-  // @note #main-menu is turned off so we can have expanded menu items using
-  //       #block-system-main-menu.
   .navigation {
     a {
       padding: rhythm(1) $zen-gutter-width / 2;
@@ -976,7 +974,6 @@
     }
     h2 {
       margin: rhythm(0.5) 0;
-      overflow: hidden;
       a {
         padding: 0;
         margin: 0 rhythm(1.2);
@@ -1073,8 +1070,7 @@
       // Last block is copyright string and (optional) address
       &:last-child {
         text-transform: uppercase;
-        @include hipos-adjust-font-size-and-rhythm(0.9);
-        margin: 0;
+        @include hipos-adjust-font-size-and-rhythm(0.9, 0, 0);
         p {
           margin: 0;
           + ul {

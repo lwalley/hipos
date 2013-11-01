@@ -84,12 +84,11 @@
   @include background-image(linear-gradient(left top, $from, $to));
 }
 
-@mixin hipos-adjust-font-size-and-rhythm($adjustment) {
-  /* Sets the font-size and line-height while keeping a proper vertical rhythm. */
-  @include adjust-font-size-to($adjustment * $base-font-size);
-  /* Sets 1 unit of vertical rhythm on the top and bottom margins. */
-  @include leader(1, $adjustment * $base-font-size);
-  @include trailer(1, $adjustment * $base-font-size);
+@mixin hipos-adjust-font-size-and-rhythm($font-adjustment, $leader-rhythm: 1, $trailer-rhythm: 1) {
+  // Sets the font-size and line-height while keeping a proper vertical rhythm.
+  @include adjust-font-size-to($font-adjustment * $base-font-size);
+  @include leader($leader-rhythm, $font-adjustment * $base-font-size);
+  @include trailer($trailer-rhythm, $font-adjustment * $base-font-size);
 }
 
 @mixin hipos-increase-base-font-sizes($increase) {

@@ -1,11 +1,10 @@
-/**
- * @file
- * Swimlanes theme
- *
- * Stretches background colors across full screen width for each page section.
- * Page sections are define in the page.tpl.php of the HPS Zen theme.
- * @see hpszen/templates/page.tpl.php
- */
+// @file
+// Swimlanes theme
+//
+// Stretches background colors across full screen width for each page section.
+// Page sections are define in the page.tpl.php of the HPS Zen theme.
+// @see hpszen/templates/page.tpl.php
+
 @import '../mixins';
 
 body {
@@ -25,8 +24,8 @@ body {
   }
 }
 
-html.js .navigation {
-  // If Javascript is enabled then replace navigation header with hamburger icon
+.js .navigation {
+  // When Javascript is enabled main menu is hidden with title as show trigger
   h2 {
     @include hide-text();
     a {

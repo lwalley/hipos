@@ -1,45 +1,62 @@
 // @file
 // Styles for positioning modular elements on a page in a micro layout.
 
-.header {
-  float: right;
-  padding-right: $zen-gutter-width / 2;
+$micro-gutter-width: round($zen-gutter-width * 0.25);
+.header,
+.navigation {
+  @include zen-grid-item-base($micro-gutter-width);
+  @include zen-grid-item($zen-column-count, 1);
+  @include zen-clear;
+}
+.navigation {
+  @include zen-nested-container();
+}
+
+@media all and (min-width: 1em / 16 * 320) and (max-width: 1em / 16 * 840) {
+  .js {
+    // When Javascript is enabled main menu is hidden with title as show trigger
+    // So we have room to put menu title and site title side by side
+    .header {
+      @include zen-grid-item(11, 2);
+    }
+    .navigation {
+      clear: none;
+    }
+  }
 }
 
 // Switch to horizontal navigation and reposition header.
 // Breakpoint should match Drupal.settings.hpszen.navigationBreakpoint
 @media all and (min-width: 1em / 16 * 841) {
   .header {
-    @include zen-grid-item-base();
     @include zen-grid-item(5, 1);
-    @include padding-leader(0.45);
   }
   .navigation {
-    @include zen-grid-item-base();
     @include zen-grid-item(7, 6);
+    clear: none;
   }
 }
 .main__content {
   @include padding-leader(2);
 }
 
-.region-footer {
-  height: rhythm($hipos-footer-rhythm - 2.5); // Reduce space needed for footer.
+.footer {
+  height: rhythm($hipos-footer-rhythm - 1.5); // Reduce space needed for footer.
   .block {
     margin: 0;
   }
   .menu {
-    @include adjust-leading-to(1);
+    @include adjust-leading-to(1.5);
   }
 }
 @media all and (min-width: 1em / 16 * 510) {
-  .region-footer {
-    height: rhythm($hipos-footer-rhythm - 3.5); // Reduce space needed for footer.
+  .footer {
+    height: rhythm($hipos-footer-rhythm - 3); // Reduce space needed for footer.
   }
 }
 @media all and (min-width: 1em / 16 * 682) {
-  .region-footer {
-    height: rhythm($hipos-footer-rhythm - 5); // Reduce space needed for footer.
+  .footer {
+    height: rhythm($hipos-footer-rhythm - 4.5); // Reduce space needed for footer.
     .block {
       &:nth-child(2n+1) {
         @include zen-grid-item(3, 1, right);
@@ -48,7 +65,7 @@
       &:nth-child(2n) {
         @include zen-grid-item(9, 4, right);
         clear: none;
-        padding-top: rhythm(0.6);
+        padding-top: rhythm(0.8);
       }
     }
   }
