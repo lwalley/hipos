@@ -7,9 +7,6 @@
 
 @mixin hipos-adjust-responsive-images($adjustment, $base: 12) {
   span.hpszen-responsive {
-    &.hps-original {
-      width: (1em / $base) * 350 * $adjustment;
-    }
     &.hps-principal {
       width: (1em / $base) * 350 * $adjustment;
     }

@@ -88,7 +88,7 @@
     @extend %panel;
   }
   .main__content {
-    padding-bottom: rhythm($hipos-footer-rhythm + 1); // Provide space for footer plus extra.
+    @include padding-trailer();
   }
   .no-panels .main__content__bucket--ish {
     @extend %bucket;
@@ -99,7 +99,6 @@
 
   .bottom {
     @include padding-leader();
-    padding-bottom: rhythm($hipos-footer-rhythm + 1); // Provide space for footer
     .block {
       @extend %panel;
     }
@@ -108,8 +107,7 @@
   .footer {
     // Keep footer at the bottom of the page.
     position: absolute;
-    bottom: 0;
-    height: rhythm($hipos-footer-rhythm);
+    top: 100%;
     width: 100%;
     .block {
       @extend %panel;

@@ -1070,7 +1070,7 @@
       // Last block is copyright string and (optional) address
       &:last-child {
         text-transform: uppercase;
-        @include hipos-adjust-font-size-and-rhythm(0.9, 0, 0);
+        @include hipos-adjust-font-size-and-rhythm(0.9, 0);
         p {
           margin: 0;
           + ul {
