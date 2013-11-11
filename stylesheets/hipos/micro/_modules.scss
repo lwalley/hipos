@@ -6,6 +6,9 @@
 }
 .header__site-name {
   @include hipos-adjust-font-size-and-rhythm(1, 0.7, 0.7);
+  a {
+    padding-right: round($zen-gutter-width * 0.3);
+  }
 }
 .navigation {
   .block {
@@ -14,18 +17,27 @@
   h2 {
     // By default, assuming no js, we hide the navigation header and show items.
     @include element-invisible;
+    a {
+      padding-left: round($zen-gutter-width * 0.3);
+      margin: 0;
+    }
+  }
+  ul {
+    @include zen-clear;
+    a {
+      padding-left: round($zen-gutter-width * 0.3);
+    }
   }
 }
 .js {
   .navigation h2 {
     // With js we use navigation header as toggle and hide items
     @include element-invisible-off;
+    @include zen-grid-item-base();
+    @include zen-grid-item(2, 1);
+    @include zen-nested-container();
     @include hipos-adjust-font-size-and-rhythm(1, 0.7, 0.7);
-    padding-left: rhythm(0.5);
     font-weight: normal;
-    a {
-      margin: 0;
-    }
   }
 }
 

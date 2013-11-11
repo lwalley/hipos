@@ -18,6 +18,15 @@
   top: 0;
   left: 0;
 }
+@media all and (max-width: 1em / 16 * 320) {
+  .header__brand,
+  .header__secondary-menu,
+  .header__region {
+    padding-left: round($zen-gutter-width * 0.3);
+    padding-right: round($zen-gutter-width * 0.3);
+  }
+}
+
 
 @media all and (min-width: 1em / 16 * 768) {
   .header__bucket {

@@ -1,0 +1,48 @@
+// @file
+// Partial declaring icomoon font variables for use in themes
+// To use icomoon make sure icomoon.* fonts are copied to fonts_dir and then use:
+// @include font-face(
+//   $icon-font,
+//   font-files('icomoon.woff', 'icomoon.svg', 'icomoon.eot'),
+//   'icomoon.eot'
+// );
+
+$icon-font:         'icomoon';
+$icon-menu:         '\e600';
+$icon-play:         '\e602';
+$icon-music:        '\e603';
+$icon-cog:          '\e604';
+$icon-image:        '\e605';
+$icon-camera:       '\e606';
+$icon-tree:         '\e607';
+$icon-search:       '\e608';
+$icon-backward:     '\e609';
+$icon-forward:      '\e60a';
+$icon-pause:        '\e60b';
+$icon-play2:        '\e60c';
+$icon-stop:         '\e60d';
+$icon-file-pdf:     '\e60e';
+$icon-user:         '\e60f';
+$icon-quotes-left:  '\e610';
+$icon-previous:     '\e611';
+$icon-next:         '\e612';
+$icon-arrow-right:  '\e613';
+$icon-arrow-left:   '\e614';
+$icon-arrow-left2:  '\e615';
+$icon-arrow-right2: '\e616';
+$icon-first:        '\e617';
+$icon-last:         '\e618';
+$icon-enter:        '\e619';
+$icon-exit:         '\e61a';
+$icon-stack:        '\e61b';
+$icon-info:         '\e61c';
+$icon-info2:        '\e61d';
+$icon-close:        '\e61e';
+$icon-arrow-up:     '\e61f';
+$icon-arrow-down:   '\e620';
+$icon-arrow-down2:  '\e621';
+$icon-arrow-up2:    '\e622';
+$icon-new-tab:      '\e623';
+$icon-list:         '\e624';
+$icon-list2:        '\e625';
+

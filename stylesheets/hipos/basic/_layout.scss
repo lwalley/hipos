@@ -21,6 +21,10 @@
   @media all and (min-width: 1em / 16 * 1920) {
     @include hipos-increase-base-font-sizes(1.5);
   }
+  @media all and (min-width: 1em / 16 * 2500) {
+    @include hipos-increase-base-font-sizes(1.6);
+  }
+
 
   html,
   body {
@@ -113,5 +117,17 @@
       @extend %panel;
     }
   }
+
+  @media all and (max-width: 1em / 16 * 320) {
+    .panel,
+    .main__header__panel--ish,
+    .no-panels .main__content__panel--ish,
+    .bottom .block,
+    .footer .block {
+      padding-left: round($zen-gutter-width * 0.3);
+      padding-right: round($zen-gutter-width * 0.3);
+    }
+  }
+
 
 }

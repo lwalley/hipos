@@ -19,9 +19,6 @@
     &.hps-uniform {
       display: inline-block;
       max-width: 100%;
-      img {
-        max-width: 100%;
-      }
     }
   }
   @include hipos-adjust-responsive-images(1);
@@ -945,7 +942,7 @@
   // Navigation bar.
   .navigation {
     a {
-      padding: rhythm(1) $zen-gutter-width / 2;
+      padding: rhythm(1) $zen-gutter-width * 0.5;
       display: block;
       text-decoration: none;
       &:hover,
@@ -975,8 +972,8 @@
     h2 {
       margin: rhythm(0.5) 0;
       a {
-        padding: 0;
-        margin: 0 rhythm(1.2);
+        padding-top: 0;
+        padding-bottom: 0;
       }
     }
   }
@@ -986,7 +983,12 @@
       margin-right: rhythm(2);
     }
   }
-
+  @media all and (max-width: 1em / 16 * 320) {
+    .navigation a {
+      padding-left: round($zen-gutter-width * 0.3);
+      padding-right: round($zen-gutter-width * 0.3);
+    }
+  }
   // Results lists
   // @todo too specific for basic styles, move to drupal only styles
   .panel__results {

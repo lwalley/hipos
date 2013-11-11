@@ -6,6 +6,23 @@
 // @see hpszen/templates/page.tpl.php
 
 @import '../mixins';
+@import 'icomoon';
+
+@include font-face(
+  $icon-font,
+  font-files('icomoon.woff', 'icomoon.svg', 'icomoon.eot'),
+  'icomoon.eot'
+);
+
+%icon {
+  font-family: $icon-font;
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-size: 32px;
+  -webkit-font-smoothing: antialiased;
+}
 
 body {
   @include hipos-color($body--colors);
@@ -25,11 +42,22 @@ body {
 }
 
 .js .navigation {
-  // When Javascript is enabled main menu is hidden with title as show trigger
+  // When Javascript is enabled main menu is hidden on small screens with title
+  // as show trigger
   h2 {
-    @include hide-text();
+    line-height: normal;
     a {
-      background: sprite($icons-small, hamburger) no-repeat;
+      text-indent: -99999px;
+      &:hover {
+        text-decoration: none;
+      }
+      &:before {
+        position: relative;
+        top: 0;
+        left: 99999px;
+        @extend %icon;
+        content: $icon-menu;
+      }
     }
   }
   // @todo This doesn't work properly at the moment because we need to add state

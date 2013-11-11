@@ -1,14 +1,11 @@
 // @file
 // Styles for positioning modular elements on a page in a micro layout.
 
-$micro-gutter-width: round($zen-gutter-width * 0.25);
 .header,
 .navigation {
-  @include zen-grid-item-base($micro-gutter-width);
+  @include zen-grid-item-base();
   @include zen-grid-item($zen-column-count, 1);
   @include zen-clear;
-}
-.navigation {
   @include zen-nested-container();
 }
 
@@ -17,7 +14,8 @@ $micro-gutter-width: round($zen-gutter-width * 0.25);
     // When Javascript is enabled main menu is hidden with title as show trigger
     // So we have room to put menu title and site title side by side
     .header {
-      @include zen-grid-item(11, 2);
+      @include zen-grid-item(10, 3);
+      position: relative; // Needed to ensure links are not behind navigation
     }
     .navigation {
       clear: none;
@@ -30,9 +28,11 @@ $micro-gutter-width: round($zen-gutter-width * 0.25);
 @media all and (min-width: 1em / 16 * 841) {
   .header {
     @include zen-grid-item(5, 1);
+    padding-left: round($zen-gutter-width * 0.3);
   }
   .navigation {
     @include zen-grid-item(7, 6);
+    padding-left: round($zen-gutter-width * 0.3);
     clear: none;
   }
 }
@@ -42,7 +42,8 @@ $micro-gutter-width: round($zen-gutter-width * 0.25);
 
 .footer {
   .block {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   .menu {
     @include adjust-leading-to(1.5);

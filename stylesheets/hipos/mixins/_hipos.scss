@@ -1,7 +1,10 @@
 // @file
 // Mixins and functions for hipos.
 
-@function hipos-px-to-em($pixels-to-convert, $base-font-size-unitless) {
+@function hipos-strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+@function hipos-px-to-em($pixels-to-convert, $base-font-size-unitless: 12) {
   @return ($pixels-to-convert / $base-font-size-unitless) + 0em;
 }
 
