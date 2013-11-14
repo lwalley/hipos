@@ -14,16 +14,6 @@
   'icomoon.eot'
 );
 
-%icon {
-  font-family: $icon-font;
-  speak: none;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  font-size: 32px;
-  -webkit-font-smoothing: antialiased;
-}
-
 body {
   @include hipos-color($body--colors);
 }
@@ -47,17 +37,7 @@ body {
   h2 {
     line-height: normal;
     a {
-      text-indent: -99999px;
-      &:hover {
-        text-decoration: none;
-      }
-      &:before {
-        position: relative;
-        top: 0;
-        left: 99999px;
-        @extend %icon;
-        content: $icon-menu;
-      }
+      @include icomoon-replace-text-with-glyph($icon-menu);
     }
   }
   // @todo This doesn't work properly at the moment because we need to add state

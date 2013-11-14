@@ -770,19 +770,6 @@
   }
 
   // @todo too specific for basic styles, move to drupal only styles
-  .book-navigation {
-    @include padding-leader(2);
-    .menu {
-      list-style-type: none;
-      border-top-style: dotted;
-    }
-    .page-links {
-      border-top-style: dotted;
-      border-bottom-style: dotted;
-    }
-  }
-
-  // @todo too specific for basic styles, move to drupal only styles
   #block-sharethis-sharethis-block {
     @include padding-leader(1);
     @include padding-trailer(1);
